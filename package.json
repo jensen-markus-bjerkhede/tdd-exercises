@@ -5,7 +5,6 @@
     "main": "",
     "scripts": {
         "test": "jest --watch",
-        "test:unit": "vue-cli-service test:unit --watch",
         "hello": "echo Du kan skriva egna skript i package.json"
     },
     "keywords": [

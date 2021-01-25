@@ -9,15 +9,6 @@ it('Funktionen store ska ta en parameter', () => {
     // act & assert
     expect(af).toThrow('Invalid number of parameters');
 });
-
-it('När man anropar store ska värdet på parametern sparas', () => {
-    // arrange
-    const expected = store('something');
-    // act 
-    const actual = value;
-    //assert
-    expect(actual).toBe(expected);
-});
 it('Funktionen retrieve ska inte ha några parametrar', () => {
     // arrange
     const af = () => {
