@@ -1,35 +1,21 @@
 require('jest');
+const { store } = require('../src/store.js');
+//Funktionen store ska ta en parameter
+//Man anropar den ska värdet på parametern sparas
+//Funktionen retrieve ska inte ha några parametrar
+//När den anropas ska den returnera värdet som man senast sparade med store
 
-const { store, retrieve } = require('../src/store.js');
+it('Funktionen store ska ta en parameter', () => {
+    // arrange
+    const af = () => {
+        store('something', 'somethingelse');
+    };
+    // act & assert
+    expect(af).toThrow('Invalid number of parameters');
+});
 
-// Test cases:
-// the parameter to store should not be undefined
-// when store is called, the value should be saved
-// retrieve should return the most recent value stored
-
-
-it('parameter to store should not be undefined', () => {
-	// arrange
-	const input = 'hello';
-
-	// act
-	store(input);
-	store();  // parameter is undefined
-
-	// assert
-	let actual = retrieve();
-	expect(actual).toBe(input);
-})
-
-it('should save the value when store is called', () => {
-	// arrange
-	const input = 'lilja';
-	const expected = input;
-
-	// act
-	store(input);
-	let actual = retrieve();
-
-	// assert
-	expect(actual).toBe(expected);
-})
+it('När man anropar den ska värdet på parametern sparas', () => {
+    // arrange	
+    const expected = 'something';
+    // act
+});
