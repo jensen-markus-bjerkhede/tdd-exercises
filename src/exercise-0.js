@@ -9,12 +9,25 @@ it should return correct interest rate otherwise
 
 function calculateInterest(interest, years) {
     // 1 <= interest < 2
-    if ((typeof interest) === 'number' && !isNaN(interest) && interest >= 1 && interest < 2) {
-        // Proper value
-    } else {
-        // Bad value
-        throw new Error('Bad value for interest')
+    if (arguments.length != 2) {
+        throw new Error('Wrong amount of parameters');
     }
+    if ((typeof interest) !== 'number') {
+        throw new Error('Bad value for interest');
+    }
+    if (isNaN(years)) {
+        throw new Error('Bad value for years');
+    }
+    // Proper value
+    if (years === 0) {
+        return 1
+    } else {
+        return interest * years;
+    }
+
+    // Bad value
+
+
 }
 
 
