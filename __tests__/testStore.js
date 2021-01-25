@@ -28,9 +28,10 @@ it('Funktionen retrieve ska inte ha några parametrar', () => {
 });
 it('När retrieve anropas ska den returnera värdet som man senast sparade med store', () => {
     // arrange	
-    const savedByStore = store('something');
+    const expected = 'something';
     // act
+    store(expected);
     const actual = retrieve();
     // assert
-    expect(actual).toBe(savedByStore);
+    expect(actual).toBe(expected);
 });
